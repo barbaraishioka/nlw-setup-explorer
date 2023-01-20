@@ -1,28 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
 }
 
 :root {
   --primary-color: #8b5cf6;
-  --text-color: #fff;
+  --btn-text-color: #fff;
+  --date-text-color: #a1a1aa;
   --body-bg-color: #09090a;
+
+  --checked-border-color: #a78bfa;
+  --checked-bg-color: #8b5cf6;
+
+  --unchecked-border-color: #27272a;
+  --unchecked-bg-color: #18181b;
 }
 
 body {
   background-color: var(--body-bg-color);
-  color: var(--text-color);
 }
 
 #container {
-  padding-left: 120px;
+  padding-inline: 80px;
 }
 
 header {
-  padding-right: 120px;
   margin-top: 100px;
   margin-bottom: 48px;
   display: flex;
@@ -31,15 +38,15 @@ header {
 }
 
 header button {
-  padding: 16px 24px;
+  padding-inline: 24px;
   border: 1px solid var(--primary-color);
   background-color: transparent;
   border-radius: 8px;
   font-family: "Inter", sans-serif;
-  color: var(--text-color);
+  color: var(--btn-text-color);
   font-weight: 600;
   font-size: 16px;
-  line-height: 125%;
+  line-height: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -48,7 +55,59 @@ header button {
   text-align: center;
 }
 
-main {
-  display: grid;
-  place-items: center;
+form {
+  width: max-content;
+  height: max-content;
+  color: var(--date-text-color);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 125%;
+  text-align: center;
+  display: flex;
+  padding-right: 120px;
+}
+
+form .habits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+form .habits .habit {
+  width: 40px;
+  height: 64px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form .days {
+  display: flex;
+  margin-left: 32px;
+  gap: 48px;
+}
+
+form .days .day {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 2px solid var(--unchecked-border-color);
+  background: var(--unchecked-bg-color);
+}
+
+form input:checked {
+  background: var(--checked-bg-color);
+  border-color: var(--checked-border-color);
 }
