@@ -26,15 +26,19 @@ body {
 }
 
 #container {
-  padding-inline: 80px;
+  margin-bottom: 48px;
 }
 
 header {
-  margin-top: 100px;
-  margin-bottom: 48px;
+  padding-inline: 80px;
+  width: 100%;
+  padding-block: 48px;
+  gap: 48px;
   display: flex;
+  position: fixed;
+  background: var(--body-bg-color);
   justify-content: space-between;
-  gap: 60px;
+  box-shadow: 0px 2px 4px #000;
 }
 
 header button {
@@ -42,11 +46,6 @@ header button {
   border: 1px solid var(--primary-color);
   background-color: transparent;
   border-radius: 8px;
-  font-family: "Inter", sans-serif;
-  color: var(--btn-text-color);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -55,7 +54,17 @@ header button {
   text-align: center;
 }
 
+header button span {
+  font-family: "Inter", sans-serif;
+  color: var(--btn-text-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+}
+
 form {
+  padding-inline: 80px;
   width: max-content;
   height: max-content;
   color: var(--date-text-color);
@@ -64,7 +73,7 @@ form {
   line-height: 125%;
   text-align: center;
   display: flex;
-  padding-right: 80px;
+  padding-top: 240px;
 }
 
 form .habits {
@@ -110,4 +119,15 @@ form input {
 form input:checked {
   background: var(--checked-bg-color);
   border-color: var(--checked-border-color);
+}
+
+@media only screen and (max-width: 630px) {
+  header,
+  form {
+    padding-inline: 40px;
+  }
+
+  header span {
+    display: none;
+  }
 }
